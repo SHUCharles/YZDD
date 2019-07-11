@@ -1,0 +1,25 @@
+package com.it.shu.service.impl;
+
+import com.it.shu.entity.DataVO;
+import com.it.shu.service.DataService;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import java.util.List;
+
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class DataServiceImplTest {
+
+    @Autowired
+    private DataService dataService;
+    @Test
+    public void queryData() {
+        List<DataVO> data =dataService.queryData("1001");
+        int result = data.size();
+        System.out.println("result:"+result);
+    }
+}

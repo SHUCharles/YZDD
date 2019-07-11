@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.it.shu.mapper.ImageMapper">
+
+    <select id="queryImage" parameterType="com.it.shu.entity.ImageVO" resultType="com.it.shu.entity.ImageVO">
+        SELECT image.*,`data`.data_horizontal,`data`.data_ordinate
+        from image JOIN `data` where `data`.data_id = image.data_id  and user_id = #{user_id,jdbcType=VARCHAR}
+    </select>
+</mapper>

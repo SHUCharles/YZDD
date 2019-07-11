@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.it.shu.mapper.DataMapper">
+
+    <select id="queryData" parameterType="com.it.shu.entity.DataVO" resultType="com.it.shu.entity.DataVO">
+       select
+           `data`.*,image.image_address as image_address
+        from `data` join image where `data`.data_id = image.data_id and `data`.data_id= #{data_id,jdbcType=VARCHAR}
+
+    </select>
+</mapper>
